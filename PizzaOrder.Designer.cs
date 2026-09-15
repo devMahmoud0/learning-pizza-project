@@ -60,11 +60,14 @@
             this.gbOrderSummary = new System.Windows.Forms.GroupBox();
             this.btnOrderPizza = new System.Windows.Forms.Button();
             this.btnResetForm = new System.Windows.Forms.Button();
+            this.numericQuantity = new System.Windows.Forms.NumericUpDown();
+            this.lblQuantity = new System.Windows.Forms.Label();
             this.gbPizzaSize.SuspendLayout();
             this.gbCrustType.SuspendLayout();
             this.gbToppings.SuspendLayout();
             this.gbWhereToEat.SuspendLayout();
             this.gbOrderSummary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -476,12 +479,42 @@
             this.btnResetForm.UseVisualStyleBackColor = true;
             this.btnResetForm.Click += new System.EventHandler(this.btnResetForm_Click);
             // 
+            // numericQuantity
+            // 
+            this.numericQuantity.Location = new System.Drawing.Point(330, 383);
+            this.numericQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericQuantity.Name = "numericQuantity";
+            this.numericQuantity.Size = new System.Drawing.Size(120, 22);
+            this.numericQuantity.TabIndex = 18;
+            this.numericQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericQuantity.ValueChanged += new System.EventHandler(this.numericQuantity_ValueChanged);
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.Location = new System.Drawing.Point(257, 385);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(67, 16);
+            this.lblQuantity.TabIndex = 19;
+            this.lblQuantity.Text = "Quantity:";
+            // 
             // PizzaOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.lblQuantity);
+            this.Controls.Add(this.numericQuantity);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnResetForm);
             this.Controls.Add(this.btnOrderPizza);
@@ -509,6 +542,7 @@
             this.gbWhereToEat.PerformLayout();
             this.gbOrderSummary.ResumeLayout(false);
             this.gbOrderSummary.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -548,6 +582,8 @@
         private System.Windows.Forms.GroupBox gbOrderSummary;
         private System.Windows.Forms.Button btnOrderPizza;
         private System.Windows.Forms.Button btnResetForm;
+        private System.Windows.Forms.NumericUpDown numericQuantity;
+        private System.Windows.Forms.Label lblQuantity;
     }
 }
 

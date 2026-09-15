@@ -54,6 +54,12 @@ namespace Pizza_Project
 
             // reset Order Button
             btnOrderPizza.Enabled = true;
+
+            numericQuantity.Enabled = true;
+            numericQuantity.Value = 1;
+
+            lblQuantity.Enabled = true;
+
         }
 
         void UpdateWhereToEat()
@@ -190,7 +196,7 @@ namespace Pizza_Project
 
         float CalculateTotalPrice()
         {
-            return GetSelectedSizePrice() + CalclulateToppingsPrice() + GetSelectedCrustPrice();
+            return (GetSelectedSizePrice() + CalclulateToppingsPrice() + GetSelectedCrustPrice()) * (float)numericQuantity.Value;
         }
 
         void UpdateTotalPrice()
@@ -304,6 +310,8 @@ namespace Pizza_Project
                 gbPizzaSize.Enabled = false;
                 gbToppings.Enabled = false;
                 gbWhereToEat.Enabled = false;
+                numericQuantity.Enabled = false;
+                lblQuantity.Enabled = false;
             }
             else
             {
@@ -319,6 +327,11 @@ namespace Pizza_Project
         private void PizzaOrder_Load(object sender, EventArgs e)
         {
             UpdateOrderSummary();
+        }
+
+        private void numericQuantity_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateTotalPrice();
         }
     }
 }
